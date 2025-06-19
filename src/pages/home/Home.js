@@ -7,6 +7,7 @@ import {
   selectFilteredCountries,
 } from "../../features/countrySlice";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { FaBars } from "react-icons/fa";
 import "./Home.css";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
   const countries = useSelector(selectFilteredCountries);
   const visibleCount = useSelector((state) => state.countries.visibleCount);
   const [activeFilter, setActiveFilter] = useState("All");
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const [currentIndex, setCurrentIndex] = useState(1);
   const [dotIndex, setDotIndex] = useState(0);
@@ -61,10 +63,11 @@ const Home = () => {
       setDotIndex((prev) => Math.max(prev - 1, 0));
     }
   };
+  const regions = ["All", "Asia", "Europe"];
 
   return (
     <div className="home-page">
-      <header className="top-header">
+      {/* <header className="top-header">
         <h4>Countries</h4>
         <div className="region-filters">
           {["All", "Asia", "Europe"].map((region) => (
@@ -78,6 +81,49 @@ const Home = () => {
               {region}
             </button>
           ))}
+        </div>
+      </header> */}
+      <header className="top-header">
+        <h4>Countries</h4>
+
+        {/* Desktop Region Filters */}
+        <div className="region-filters desktop-only">
+          {regions.map((region) => (
+            <button
+              key={region}
+              className={`region-button ${
+                activeFilter === region ? "active" : ""
+              }`}
+              onClick={() => handleFilterClick(region)}
+            >
+              {region}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Hamburger */}
+        <div className="mobile-only">
+          <button
+            className="hamburger-button"
+            onClick={() => setShowMobileMenu((prev) => !prev)}
+          >
+            <FaBars />
+          </button>
+          {showMobileMenu && (
+            <div className="mobile-menu-popup">
+              {regions.map((region) => (
+                <button
+                  key={region}
+                  className={`region-button ${
+                    activeFilter === region ? "active" : ""
+                  }`}
+                  onClick={() => handleFilterClick(region)}
+                >
+                  {region}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </header>
 
