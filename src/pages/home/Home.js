@@ -67,22 +67,6 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* <header className="top-header">
-        <h4>Countries</h4>
-        <div className="region-filters">
-          {["All", "Asia", "Europe"].map((region) => (
-            <button
-              key={region}
-              className={`region-button ${
-                activeFilter === region ? "active" : ""
-              }`}
-              onClick={() => handleFilterClick(region)}
-            >
-              {region}
-            </button>
-          ))}
-        </div>
-      </header> */}
       <header className="top-header">
         <h4>Countries</h4>
 
