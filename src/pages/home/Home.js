@@ -184,7 +184,7 @@ const Home = () => {
           <i className="bi bi-instagram" />
           <i className="bi bi-github" />
         </div>
-        <p>murshidwork@gmail.com</p>
+        <p>murshidkmwork@gmail.com</p>
         <p>Copyright © 2020 Murshid KM. All rights reserved.</p>
       </footer>
     </div>
