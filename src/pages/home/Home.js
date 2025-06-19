@@ -184,8 +184,8 @@ const Home = () => {
           <i className="bi bi-instagram" />
           <i className="bi bi-github" />
         </div>
-        <p>example@email.com</p>
-        <p>Copyright © 2020 Name. All rights reserved.</p>
+        <p>murshidwork@email.com</p>
+        <p>Copyright © 2020 Murshid KM. All rights reserved.</p>
       </footer>
     </div>
   );
