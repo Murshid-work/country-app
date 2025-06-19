@@ -1,0 +1,269 @@
+/* Home Page Wrapper */
+.home-page {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/* Top Header */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Desktop Region Filters */
+.region-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Common Region Button Styling */
+.region-button {
+  border: none;
+  background: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.region-button.active {
+  border-bottom: 2px solid black;
+  color: black;
+}
+
+/* Hamburger & Mobile Menu */
+.hamburger-button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.mobile-menu-popup {
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Visibility Classes */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* Welcome Section */
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.line-1,
+.line-2 {
+  width: 43%;
+  height: 0.1rem;
+  background-color: black;
+}
+
+.line-1 {
+  align-self: flex-start;
+}
+
+.line-2 {
+  align-self: flex-end;
+}
+
+.welcome-heading h2 {
+  margin: 0;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* Slider Section */
+.custom-slider-section {
+  padding: 2rem 1rem;
+}
+
+.slider-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.slider-left-with-controls {
+  width: 72%;
+  position: relative;
+}
+
+.slider-right {
+  width: 28%;
+}
+
+.slider-main-image,
+.slider-frame-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #f1f1f1;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 10;
+  background-color: rgb(255 255 255 / 7%);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.slider-arrow,
+.dot {
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.slider-arrow {
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #000;
+}
+
+/* Country Cards */
+.countries-container {
+  padding: 2rem 1rem;
+}
+
+.country-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.country-card img.flag {
+  width: 60px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+.country-details .region {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+  margin-top: 2rem;
+}
+
+.footer-icons {
+  font-size: 1.5rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.footer-icons i {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-page {
+    max-width: 95%;
+    padding: 0 1rem;
+  }
+
+  /* Mobile visibility */
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .line-1,
+  .line-2 {
+    width: 100%;
+    align-self: center;
+  }
+  .mobile-hidden {
+    display: none !important;
+  }
+  .slider-left-with-controls {
+    width: 100% !important;
+  }
+
+  .slider-row {
+    flex-direction: column;
+  }
+
+  .slider-left-with-controls,
+  .slider-right {
+    width: 100%;
+  }
+
+  .slider-main-image,
+  .slider-frame-image {
+    height: 220px;
+  }
+
+  .slider-controls {
+    bottom: 8px;
+    padding: 5px 10px;
+  }
+
+  .country-card img.flag {
+    width: 50px;
+    height: 30px;
+  }
+}
